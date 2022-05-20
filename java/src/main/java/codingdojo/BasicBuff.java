@@ -16,7 +16,7 @@ public class BasicBuff implements Buff {
     }
 
     @Override
-    public float damageModifier() {
+    public float damageModifier() {π
         return damage;
     }
 }
