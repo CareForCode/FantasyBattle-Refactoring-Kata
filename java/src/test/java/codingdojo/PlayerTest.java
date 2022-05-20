@@ -9,33 +9,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 public class PlayerTest {
-
     @Test
-    void damageCalculations() {
+    void damageEnemyWithoutBuffs() {
         Inventory inventory = new Inventory(new Equipment(
-                new BasicItem("", 0, 0.0f),
-                new BasicItem("", 0, 0.0f),
-                new BasicItem("", 0, 0.0f),
-                new BasicItem("", 0, 0.0f),
-                new BasicItem("", 0, 0.0f)));
-        Stats stats = new Stats(0);
+                new BasicItem("lefthand", 1, 0.8f),
+                new BasicItem("rightHand", 2, 0.5f),
+                new BasicItem("head", 3, 0.3f),
+                new BasicItem("feet", 5, 0.2f),
+                new BasicItem("chest", 8, 0.1f)));
+        Stats stats = new Stats(13);
         SimpleEnemy target = new SimpleEnemy(new SimpleArmor(1), Collections.emptyList());
         Damage damage = new Player(inventory, stats).calculateDamage(target);
-        assertEquals(0, damage.getAmount());
+        assertEquals(60, damage.getAmount());
     }
+
 
     @Test
-    void damageCalculations2() {
+    void damageEnemyWithBuff() {
         Inventory inventory = new Inventory(new Equipment(
-                new BasicItem("lefthand", 10, 1.0f),
-                new BasicItem("rightHand", 10, 1.0f),
-                new BasicItem("head", 10, 1.0f),
-                new BasicItem("feet", 10, 1.0f),
-                new BasicItem("chest", 10, 1.0f)));
-        Stats stats = new Stats(0);
-        SimpleEnemy target = new SimpleEnemy(new SimpleArmor(0), Collections.emptyList());
+                new BasicItem("lefthand", 1, 0.8f),
+                new BasicItem("rightHand", 2, 0.5f),
+                new BasicItem("head", 3, 0.3f),
+                new BasicItem("feet", 5, 0.2f),
+                new BasicItem("chest", 8, 0.1f)));
+        Stats stats = new Stats(13);
+        SimpleEnemy target = new SimpleEnemy(new SimpleArmor(1), Collections.singletonList(new BasicBuff(3f, 5f)));
         Damage damage = new Player(inventory, stats).calculateDamage(target);
-        assertEquals(250, damage.getAmount());
+        assertEquals(57, damage.getAmount());
     }
-
 }
