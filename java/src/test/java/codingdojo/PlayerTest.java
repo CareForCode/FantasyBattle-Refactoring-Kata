@@ -10,14 +10,14 @@ import static org.mockito.Mockito.mock;
 public class PlayerTest {
 
     public static final int INVENTORY_DMG = 60;
-    private final Inventory inventory = new Inventory(new Equipment(
+    private final Equipment equipment = new Equipment(
             new BasicItem(1, 0.8f),
             new BasicItem(2, 0.5f),
             new BasicItem(3, 0.3f),
             new BasicItem(5, 0.2f),
-            new BasicItem(8, 0.1f)));
+            new BasicItem(8, 0.1f));
     private final Stats stats = new Stats(13);
-    private final Player player = new Player(inventory, stats);
+    private final Player player = new Player(stats, equipment);
     private final SimpleArmor armor = new SimpleArmor(1);
 
     @Test
@@ -41,7 +41,7 @@ public class PlayerTest {
 
     @Test
     void damageOtherPlayer() {
-        Player otherPlayer = new Player(inventory, stats);
+        Player otherPlayer = new Player(stats, equipment);
 
         Damage damage = player.calculateDamage(otherPlayer);
 
