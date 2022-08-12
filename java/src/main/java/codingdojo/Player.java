@@ -12,21 +12,13 @@ class Player implements Target {
 
     Damage calculateDamage(Target other) {
         int totalDamage = equipment.getTotalDamage(stats.getStrength());
-        int soak1 = 0;
-        if (other instanceof Player) {
-            // TODO: Not implemented yet
-            //  Add friendly fire
-            soak1 = getSoak();
-        } else if (other instanceof SimpleEnemy) {
-            SimpleEnemy simpleEnemy = (SimpleEnemy) other;
-            soak1 = simpleEnemy.getSoak();
-        }
-        int soak = soak1;
-        return new Damage(Math.max(0, totalDamage - soak));
+        return new Damage(Math.max(0, totalDamage - other.getSoak()));
     }
 
     @Override
     public int getSoak() {
+        // TODO: Not implemented yet
+        //  Add friendly fire
         return Integer.MAX_VALUE;
     }
 }
