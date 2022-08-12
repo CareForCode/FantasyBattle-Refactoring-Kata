@@ -10,6 +10,7 @@ import static org.mockito.Mockito.mock;
 
 public class PlayerTest {
 
+    public static final int INVENTORY_DMG = 60;
     private final Inventory inventory = new Inventory(new Equipment(
             new BasicItem("lefthand", 1, 0.8f),
             new BasicItem("rightHand", 2, 0.5f),
@@ -26,16 +27,17 @@ public class PlayerTest {
 
         Damage damage = player.calculateDamage(target);
 
-        assertEquals(60, damage.getAmount());
+        assertEquals(INVENTORY_DMG, damage.getAmount());
     }
 
     @Test
     void damageEnemyWithBuff() {
-        SimpleEnemy target = new SimpleEnemy(armor, Collections.singletonList(new BasicBuff(3f, 5f)));
+        float soak = 3f;
+        SimpleEnemy target = new SimpleEnemy(armor, Collections.singletonList(new BasicBuff(soak, 5f)));
 
         Damage damage = player.calculateDamage(target);
 
-        assertEquals(57, damage.getAmount());
+        assertEquals(INVENTORY_DMG-soak, damage.getAmount());
     }
 
     @Test
