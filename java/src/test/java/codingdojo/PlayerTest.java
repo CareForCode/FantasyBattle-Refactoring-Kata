@@ -11,11 +11,11 @@ public class PlayerTest {
 
     public static final int INVENTORY_DMG = 60;
     private final Inventory inventory = new Inventory(new Equipment(
-            new BasicItem("lefthand", 1, 0.8f),
-            new BasicItem("rightHand", 2, 0.5f),
-            new BasicItem("head", 3, 0.3f),
-            new BasicItem("feet", 5, 0.2f),
-            new BasicItem("chest", 8, 0.1f)));
+            new BasicItem(1, 0.8f),
+            new BasicItem(2, 0.5f),
+            new BasicItem(3, 0.3f),
+            new BasicItem(5, 0.2f),
+            new BasicItem(8, 0.1f)));
     private final Stats stats = new Stats(13);
     private final Player player = new Player(inventory, stats);
     private final SimpleArmor armor = new SimpleArmor(1);

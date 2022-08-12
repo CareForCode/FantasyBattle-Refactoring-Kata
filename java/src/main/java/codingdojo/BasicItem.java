@@ -2,12 +2,10 @@ package codingdojo;
 
 public class BasicItem implements Item {
 
-    private String name;
-    private int baseDamage;
-    private float damageModifier;
+    private final int baseDamage;
+    private final float damageModifier;
 
-    public BasicItem(String name, int baseDamage, float damageModifier) {
-        this.name = name;
+    public BasicItem(int baseDamage, float damageModifier) {
         this.baseDamage = baseDamage;
         this.damageModifier = damageModifier;
     }
