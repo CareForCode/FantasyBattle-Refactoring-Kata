@@ -34,7 +34,7 @@ class Equipment {
         return chest;
     }
 
-    int getBaseDamage() {
+    private int getBaseDamage() {
         Item leftHand = getLeftHand();
         Item rightHand = getRightHand();
         Item head = getHead();
@@ -47,7 +47,7 @@ class Equipment {
                 chest.getBaseDamage();
     }
 
-    float getDamageModifier(int strength) {
+    private float getDamageModifier(int strength) {
         Item leftHand = getLeftHand();
         Item rightHand = getRightHand();
         Item head = getHead();
@@ -60,5 +60,11 @@ class Equipment {
                 head.getDamageModifier() +
                 feet.getDamageModifier() +
                 chest.getDamageModifier();
+    }
+
+    int getTotalDamage(int strength) {
+        int baseDamage = getBaseDamage();
+        float damageModifier = getDamageModifier(strength);
+        return Math.round(baseDamage * damageModifier);
     }
 }
