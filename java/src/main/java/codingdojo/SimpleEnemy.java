@@ -2,7 +2,7 @@ package codingdojo;
 
 import java.util.List;
 
-public class SimpleEnemy extends Target {
+public class SimpleEnemy implements Target {
 
     private final Armor armor;
     private final BuffList buffList;
@@ -16,7 +16,8 @@ public class SimpleEnemy extends Target {
         return this.armor;
     }
 
-    int getSoak() {
+    @Override
+    public int getSoak() {
         return Math.round(getArmor().getDamageSoak() * (buffList.getSoakModifierTotal() + 1f));
     }
 
