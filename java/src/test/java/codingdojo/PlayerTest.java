@@ -40,17 +40,5 @@ public class PlayerTest {
 
     @Test
     void damageOtherPlayer() {
-        SimpleEnemy target = new SimpleEnemy(armor, Collections.singletonList(new BasicBuff(3f, 5f)));
-        Inventory inventory = new Inventory(new Equipment(
-                new BasicItem("lefthand", 1, 0.8f),
-                new BasicItem("rightHand", 2, 0.5f),
-                new BasicItem("head", 3, 0.3f),
-                new BasicItem("feet", 5, 0.2f),
-                new BasicItem("chest", 8, 0.1f)));
-        Stats stats = new Stats(13);
-        Player friend = new Player(inventory, stats);
-        Damage damage = player.calculateDamage(friend);
-
-        assertEquals(0, damage.getAmount());
     }
 }
