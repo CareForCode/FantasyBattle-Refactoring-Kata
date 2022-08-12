@@ -12,13 +12,9 @@ public class SimpleEnemy implements Target {
         this.buffList = new BuffList(buffs);
     }
 
-    Armor getArmor() {
-        return this.armor;
-    }
-
     @Override
     public int getSoak() {
-        return Math.round(getArmor().getDamageSoak() * (buffList.getSoakModifierTotal() + 1f));
+        return Math.round(this.armor.getDamageSoak() * (buffList.getSoakModifierTotal() + 1f));
     }
 
 }
