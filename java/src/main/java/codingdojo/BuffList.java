@@ -12,4 +12,11 @@ public class BuffList {
     List<Buff> getBuffs() {
         return buffs;
     }
+
+    float getSoakModifierTotal() {
+        return (float) getBuffs()
+                .stream()
+                .mapToDouble(Buff::soakModifier)
+                .sum();
+    }
 }

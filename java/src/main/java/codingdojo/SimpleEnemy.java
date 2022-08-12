@@ -17,15 +17,7 @@ public class SimpleEnemy extends Target {
     }
 
     int getSoak() {
-        return Math.round(
-                getArmor().getDamageSoak() *
-                        (
-                                ((float) buffList.getBuffs()
-                                        .stream()
-                                        .mapToDouble(Buff::soakModifier)
-                                        .sum()) +
-                                        1f
-                        )
-        );
+        return Math.round(getArmor().getDamageSoak() * (buffList.getSoakModifierTotal() + 1f));
     }
+
 }
