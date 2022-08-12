@@ -40,5 +40,10 @@ public class PlayerTest {
 
     @Test
     void damageOtherPlayer() {
+        Player otherPlayer = new Player(inventory, stats);
+
+        Damage damage = player.calculateDamage(otherPlayer);
+
+        assertEquals(0, damage.getAmount());
     }
 }
