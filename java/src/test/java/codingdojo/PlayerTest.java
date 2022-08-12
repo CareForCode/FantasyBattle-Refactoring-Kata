@@ -1,6 +1,5 @@
 package codingdojo;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -33,7 +32,7 @@ public class PlayerTest {
     @Test
     void damageEnemyWithBuff() {
         float soak = 3f;
-        SimpleEnemy target = new SimpleEnemy(armor, Collections.singletonList(new BasicBuff(soak, 5f)));
+        SimpleEnemy target = new SimpleEnemy(armor, Collections.singletonList(new BasicBuff(soak)));
 
         Damage damage = player.calculateDamage(target);
 
