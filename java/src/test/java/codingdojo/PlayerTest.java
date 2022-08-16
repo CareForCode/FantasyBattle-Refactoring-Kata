@@ -9,13 +9,13 @@ import static org.mockito.Mockito.mock;
 
 public class PlayerTest {
 
-    public static final int INVENTORY_DMG = 63;
+    public static final int INVENTORY_DMG = 65;
     private final Equipment equipment = new Equipment(
             new Sword(10, 1.0f), new Shield(1.4f),
             new HeadArmor( 1.2f),
             new FeetArmor( 0.1f),
-            new ChestArmor( 1.4f)
-    );
+            new ChestArmor( 1.4f),
+            new Ring(0.2f));
     private final Stats stats = new Stats(13);
     private final Player player = new Player(stats, equipment);
     private final SimpleArmor armor = new SimpleArmor(1);

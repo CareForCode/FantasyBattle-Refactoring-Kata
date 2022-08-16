@@ -2,16 +2,14 @@ package codingdojo;
 
 
 class Equipment {
-    // TODO add a ring item that may be equipped
-    //  that may also add damage modifier
     private final Shield shield;
     private final Sword sword;
     private final ArmorList armorList;
 
-    Equipment(Sword sword, Shield shield, HeadArmor headArmor, FeetArmor feetArmor, ChestArmor chestArmor) {
+    Equipment(Sword sword, Shield shield, HeadArmor headArmor, FeetArmor feetArmor, ChestArmor chestArmor, Ring ring) {
         this.shield = shield;
         this.sword = sword;
-        this.armorList = new ArmorList(headArmor, feetArmor, chestArmor);
+        this.armorList = new ArmorList(headArmor, feetArmor, chestArmor, ring);
     }
 
     Shield getShield() {
