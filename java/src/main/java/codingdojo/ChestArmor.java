@@ -1,15 +1,8 @@
 package codingdojo;
 
-public class ChestArmor implements PlayerArmor {
-
-    private final float damageModifier;
+public class ChestArmor extends ArmorPiece {
 
     public ChestArmor(float damageModifier) {
-        this.damageModifier = damageModifier;
-    }
-
-    @Override
-    public float getDamageModifier() {
-        return damageModifier;
+        super(damageModifier);
     }
 }

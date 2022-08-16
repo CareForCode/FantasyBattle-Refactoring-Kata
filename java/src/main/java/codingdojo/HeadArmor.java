@@ -1,15 +1,9 @@
 package codingdojo;
 
-public class HeadArmor implements PlayerArmor {
-
-    private final float damageModifier;
+public class HeadArmor extends ArmorPiece {
 
     public HeadArmor(float damageModifier) {
-        this.damageModifier = damageModifier;
+        super(damageModifier);
     }
 
-    @Override
-    public float getDamageModifier() {
-        return damageModifier;
-    }
 }
