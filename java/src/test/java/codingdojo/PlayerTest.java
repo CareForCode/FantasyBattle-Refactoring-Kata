@@ -13,9 +13,9 @@ public class PlayerTest {
     private final Equipment equipment = new Equipment(
             new Shield(1.4f),
             new Sword(10, 1.0f),
-            new ArmorPiece(ArmorType.HEAD, 1.2f),
-            new ArmorPiece(ArmorType.FEET, 0.1f),
-            new ArmorPiece(ArmorType.CHEST, 1.4f)
+            new HeadArmor( 1.2f),
+            new FeetArmor( 0.1f),
+            new ChestArmor( 1.4f)
     );
     private final Stats stats = new Stats(13);
     private final Player player = new Player(stats, equipment);

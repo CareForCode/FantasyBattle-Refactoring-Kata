@@ -1,13 +1,11 @@
 package codingdojo;
 
-public class ArmorPiece implements PlayerArmor {
+public class FeetArmor implements PlayerArmor {
 
     private final float damageModifier;
-    private final ArmorType armorType;
 
-    public ArmorPiece(ArmorType armorType, float damageModifier) {
+    public FeetArmor(float damageModifier) {
         this.damageModifier = damageModifier;
-        this.armorType = armorType;
     }
 
     @Override
