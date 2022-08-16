@@ -4,13 +4,13 @@ package codingdojo;
 class Equipment {
     // TODO add a ring item that may be equipped
     //  that may also add damage modifier
-    private final PlayerWeapon leftHand;
-    private final PlayerWeapon rightHand;
+    private final Shield leftHand;
+    private final Sword rightHand;
     private final ArmorPiece head;
     private final ArmorPiece feet;
     private final ArmorPiece chest;
 
-    Equipment(PlayerWeapon leftHand, PlayerWeapon rightHand, ArmorPiece head, ArmorPiece feet, ArmorPiece chest) {
+    Equipment(Shield leftHand, Sword rightHand, ArmorPiece head, ArmorPiece feet, ArmorPiece chest) {
         this.leftHand = leftHand;
         this.rightHand = rightHand;
         this.head = head;
@@ -18,10 +18,10 @@ class Equipment {
         this.chest = chest;
     }
 
-    PlayerWeapon getLeftHand() {
+    Shield getLeftHand() {
         return leftHand;
     }
-    PlayerWeapon getRightHand() {
+    Sword getRightHand() {
         return rightHand;
     }
     ArmorPiece getHead() {
@@ -35,15 +35,12 @@ class Equipment {
     }
 
     private int getBaseDamage() {
-        PlayerWeapon leftHand = getLeftHand();
-        PlayerWeapon rightHand = getRightHand();
-        return leftHand.getBaseDamage() +
-                rightHand.getBaseDamage();
+        return getRightHand().getBaseDamage();
     }
 
     private float getDamageModifier(int strength) {
-        PlayerWeapon leftHand = getLeftHand();
-        PlayerWeapon rightHand = getRightHand();
+        Shield leftHand = getLeftHand();
+        Sword rightHand = getRightHand();
         ArmorPiece head = getHead();
         ArmorPiece feet = getFeet();
         ArmorPiece chest = getChest();

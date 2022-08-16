@@ -11,8 +11,8 @@ public class PlayerTest {
 
     public static final int INVENTORY_DMG = 63;
     private final Equipment equipment = new Equipment(
-            new PlayerWeapon(10, 1.0f),
-            new PlayerWeapon(0, 1.4f),
+            new Shield(1.4f),
+            new Sword(10, 1.0f),
             new ArmorPiece(ArmorType.HEAD, 1.2f),
             new ArmorPiece(ArmorType.FEET, 0.1f),
             new ArmorPiece(ArmorType.CHEST, 1.4f)

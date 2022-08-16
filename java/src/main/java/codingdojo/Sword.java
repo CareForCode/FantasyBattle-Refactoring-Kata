@@ -1,11 +1,11 @@
 package codingdojo;
 
-public class PlayerWeapon implements Weapon {
+public class Sword implements Weapon {
 
     private final int baseDamage;
     private final float damageModifier;
 
-    public PlayerWeapon(int baseDamage, float damageModifier) {
+    public Sword(int baseDamage, float damageModifier) {
         this.baseDamage = baseDamage;
         this.damageModifier = damageModifier;
     }
