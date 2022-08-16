@@ -13,8 +13,8 @@ public class PlayerTest {
     private final Equipment equipment = new Equipment(
             new PlayerWeapon(10, 1.0f),
             new PlayerWeapon(0, 1.4f),
-            new HeadArmor(0.1f),
-            new BasicItem(0, 1.2f),
+            new ArmorPiece(ArmorType.HEAD, 1.2f),
+            new BasicItem(0, 0.1f),
             new BasicItem(0, 1.4f)
     );
     private final Stats stats = new Stats(13);
