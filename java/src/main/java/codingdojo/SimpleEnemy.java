@@ -14,7 +14,7 @@ public class SimpleEnemy implements Target {
 
     @Override
     public int getSoak() {
-        return Math.round(this.armor.getDamageSoak() * (buffList.getSoakModifierTotal() + 1f));
+        return Math.round(armor.getDamageSoak() * buffList.getSoakMultiplier());
     }
 
 }

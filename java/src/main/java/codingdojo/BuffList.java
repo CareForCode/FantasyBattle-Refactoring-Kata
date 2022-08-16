@@ -13,10 +13,14 @@ public class BuffList {
         return buffs;
     }
 
-    float getSoakModifierTotal() {
+    private float getSoakModifierTotal() {
         return (float) getBuffs()
                 .stream()
                 .mapToDouble(Buff::soakModifier)
                 .sum();
+    }
+
+    float getSoakMultiplier() {
+        return getSoakModifierTotal() + 1f;
     }
 }
