@@ -1,6 +1,8 @@
 package codingdojo;
 
 
+import java.util.Arrays;
+
 class Equipment {
     // TODO add a ring item that may be equipped
     //  that may also add damage modifier
@@ -9,6 +11,7 @@ class Equipment {
     private final HeadArmor headArmor;
     private final FeetArmor feetArmor;
     private final ChestArmor chestArmor;
+    private final ArmorList armorList;
 
     Equipment(Sword sword, Shield shield, HeadArmor headArmor, FeetArmor feetArmor, ChestArmor chestArmor) {
         this.shield = shield;
@@ -16,6 +19,7 @@ class Equipment {
         this.headArmor = headArmor;
         this.feetArmor = feetArmor;
         this.chestArmor = chestArmor;
+        this.armorList = new ArmorList(headArmor, feetArmor, chestArmor);
     }
 
     Shield getShield() {
