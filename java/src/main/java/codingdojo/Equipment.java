@@ -7,10 +7,10 @@ class Equipment {
     private final PlayerWeapon leftHand;
     private final PlayerWeapon rightHand;
     private final ArmorPiece head;
-    private final Item feet;
-    private final Item chest;
+    private final ArmorPiece feet;
+    private final ArmorPiece chest;
 
-    Equipment(PlayerWeapon leftHand, PlayerWeapon rightHand, ArmorPiece head, Item feet, Item chest) {
+    Equipment(PlayerWeapon leftHand, PlayerWeapon rightHand, ArmorPiece head, ArmorPiece feet, ArmorPiece chest) {
         this.leftHand = leftHand;
         this.rightHand = rightHand;
         this.head = head;
@@ -27,30 +27,26 @@ class Equipment {
     ArmorPiece getHead() {
         return head;
     }
-    Item getFeet() {
+    ArmorPiece getFeet() {
         return feet;
     }
-    Item getChest() {
+    ArmorPiece getChest() {
         return chest;
     }
 
     private int getBaseDamage() {
         PlayerWeapon leftHand = getLeftHand();
         PlayerWeapon rightHand = getRightHand();
-        Item feet = getFeet();
-        Item chest = getChest();
         return leftHand.getBaseDamage() +
-                rightHand.getBaseDamage() +
-                feet.getBaseDamage() +
-                chest.getBaseDamage();
+                rightHand.getBaseDamage();
     }
 
     private float getDamageModifier(int strength) {
         PlayerWeapon leftHand = getLeftHand();
         PlayerWeapon rightHand = getRightHand();
         ArmorPiece head = getHead();
-        Item feet = getFeet();
-        Item chest = getChest();
+        ArmorPiece feet = getFeet();
+        ArmorPiece chest = getChest();
         float strengthModifier = strength * 0.1f;
         return strengthModifier +
                 leftHand.getDamageModifier() +
